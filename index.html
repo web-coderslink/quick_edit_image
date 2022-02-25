@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=DM+Sans&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=DM+Sans&family=Noto+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Comfortaa&family=DM+Sans&family=Noto+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+<title>Quick Image Edit</title>
+</head>
+<body>
+  <header>
+    <div class="nav_bar">
+         <a class="website" href="/index.html">Quick Image Edit</a> 
+    </div>
+  </header>
+  <section class="container">
+
+     <div class="image_bar">
+      <label for="image_input_file" class="labels heading">upload an image</label>
+      <input type="file" name="image_input_file" id="images" accept="image/png,image/jpg">
+      
+     </div>
+     
+    <div class="front_disp">
+     <div>
+     <div class="card_bar">
+
+       <div class="card1">
+
+        <label for="frame_width_LR" class="labels">Positioning image : left-right</label>
+          <div class="slider_container">
+          <input type="range" value="0" id="fwlr" min="1" max="100" class="slider" name="frame_width_LR" >% <br>
+           </div>
+
+        <hr>
+        <br>
+        <label for="frame_width_TB" class="labels">positioning image : top-bottom</label>
+          <div class="slider_container">
+          <input type="range" id="fwtb" min="1" max="100" class="slider" name="frame_width_TB" value="0">% <br>
+          </div>
+          <hr>
+          <label for="frame_check" class="labels">frame </label>
+          <input type="checkbox" name="frame_check" id="frame_check"><br><br>
+          <label for="frame_width" class="labels">frame width</label>
+          
+          <div class="slider_container">
+          <input type="range" id="fw" min="0" max="100" class="slider" name="frame_width" value="0">% <br>
+          </div>
+          <hr>
+
+          <label for="saturation_check" class="labels">Image saturation</label>
+          <div>
+           <input type="checkbox" id="saturation" name="saturation_check">
+          </div>
+         
+         </div>
+
+       <div class="card2">
+            <br>
+            <label for="image_width" class="labels">Image width</label>
+            <div class="slider_container">
+            <input type="range" min="1" max="100" class="slider" name="image_width" id="image_width" value="0">
+            </div>
+            <hr>
+            <label for="image_height" class="labels">Image height</label>
+            <div class="slider_container">
+            <input type="range" min="1" max="100" class="slider" name="image_height" id="image_height" value="0">
+            </div>
+           <hr>
+           <label for="frame_color" class="labels">Frame color</label>
+
+           <select name="frame_color" id="frame_color">
+             <option value="gradient">gradient</option>
+             <option value="pattern">pattern</option>
+             <option value="solid_color">solid color</option>
+           
+           </select><hr>
+
+             <label for="add_shadow" class="labels">Add shadow under image</label>
+             <input type="checkbox" name="add_shadow" id="add_shadow">
+
+      
+       </div>
+
+       <div class="card3">
+            <label for="png_download" class="labels">PNG</label>
+           <input type="radio" name="i_download" id="png_download">
+           <br>
+           <label for="jpeg_download" class="labels">jpeg</label>
+           <input type="radio" name="i_download" id="jpeg_download">
+           <br>
+           <a href="" class="done" download="">Download</a>
+           
+        
+       </div>
+     </div>
+    </div>
+     <div class="image_display_card">
+       <div class="blur_adjs">
+        <div>
+        <label for="image_edge" class="labels">Blur adjustment</label>
+        <div class="settings slider_container">
+        <input type="range" id="blur" name="image_edge" class="slider" min="0" max="5" value="0">%<br>
+        </div>
+        </div>
+
+        <div class="color_box show hide">
+          <label for="color_picker" class="labels">Choose frame/shadow color</label>
+          <input type="color" name="color_picker" id="pick_color_1" value="#ffffff">
+        </div>
+          
+        <div class="gradient_c show hide" >
+           <div class="grad_style">
+            <span>gradient</span>
+           </div>
+           
+           <div>
+          <label for="gradient_1" class="labels">color_1</label>
+          <input type="color" name="gradient_1" id="pick_color_2" value="#ffffff">
+
+          <label for="gradient_2" class="labels">color_2</label>
+          <input type="color" name="gradient_2" id="pick_color_3" value="#ffffff">
+        </div>
+       
+        </div>
+
+    
+        </div>
+       <canvas class="mycanvas"></canvas> 
+     
+     </div>
+    </div>
+ </section>
+ <span style="margin-left:50rem;color:beige;">*load the image and adjust the parameters to see the image on canvas</span>
+
+ 
+  <footer class="footer_bar">
+     <h4 style="color:mintcream">@copyright || Vanathi Muthuraman | 2022 </h1>
+  </footer>
+  <script src="./server.js"></script>
+</body>
+</html>
